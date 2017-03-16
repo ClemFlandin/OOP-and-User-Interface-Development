@@ -1,0 +1,16 @@
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\bin\Release\WpfApplication2.exe.config
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\bin\Release\WpfApplication2.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\bin\Release\WpfApplication2.pdb
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\Greetings.g.cs
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\App.g.cs
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2_MarkupCompile.cache
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2_MarkupCompile.lref
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\Greetings.baml
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2.g.resources
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2.Properties.Resources.resources
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2.csproj.GenerateResource.Cache
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\WpfApplication2\WpfApplication2\obj\Release\WpfApplication2.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_14_WpfApplication1\WpfApplication2\bin\Release\WpfApplication2.exe.config
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_14_WpfApplication1\WpfApplication2\obj\Release\WpfApplication2.exe
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_14_WpfApplication1\WpfApplication2\obj\Release\WpfApplication2.pdb

@@ -1,0 +1,6 @@
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\bin\Debug\2017_03_14_Encap_TP1.exe.config
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\bin\Debug\2017_03_14_Encap_TP1.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\bin\Debug\2017_03_14_Encap_TP1.pdb
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.csprojResolveAssemblyReference.cache
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.pdb

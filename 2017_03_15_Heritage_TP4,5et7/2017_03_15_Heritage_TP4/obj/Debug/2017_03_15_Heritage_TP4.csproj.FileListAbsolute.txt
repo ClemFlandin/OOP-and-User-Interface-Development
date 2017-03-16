@@ -1,0 +1,12 @@
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_15_Heritage_TP4\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.exe.config
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_15_Heritage_TP4\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_15_Heritage_TP4\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.pdb
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_15_Heritage_TP4\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.csprojResolveAssemblyReference.cache
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_15_Heritage_TP4\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_15_Heritage_TP4\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_15_Heritage_TP4et5\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.exe.config
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_15_Heritage_TP4et5\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.exe
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_15_Heritage_TP4et5\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_15_Heritage_TP4et5\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.csprojResolveAssemblyReference.cache
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_15_Heritage_TP4et5\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.exe
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_15_Heritage_TP4et5\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.pdb

@@ -1,0 +1,6 @@
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_POO_PersonneBis\2017_03_14_POO_PersonneBis\bin\Debug\2017_03_14_POO_PersonneBis.exe.config
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_POO_PersonneBis\2017_03_14_POO_PersonneBis\bin\Debug\2017_03_14_POO_PersonneBis.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_POO_PersonneBis\2017_03_14_POO_PersonneBis\bin\Debug\2017_03_14_POO_PersonneBis.pdb
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_POO_PersonneBis\2017_03_14_POO_PersonneBis\obj\Debug\2017_03_14_POO_PersonneBis.csprojResolveAssemblyReference.cache
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_POO_PersonneBis\2017_03_14_POO_PersonneBis\obj\Debug\2017_03_14_POO_PersonneBis.exe
+c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_POO_PersonneBis\2017_03_14_POO_PersonneBis\obj\Debug\2017_03_14_POO_PersonneBis.pdb
