@@ -74,6 +74,7 @@ namespace BookShopTest
             }
             Console.WriteLine("Vous venez de rajouter au panier : {0} de {1}, merci!", strTitre, strAuteur);
             nLivresCommandes++;
+            Console.WriteLine("Vous avez {0} livres dans le panier", nLivresCommandes);
             nExemplairesDisponibles--;
             Console.WriteLine("Il reste {0} exemplaire(s) de ce livre", nExemplairesDisponibles);
         }
