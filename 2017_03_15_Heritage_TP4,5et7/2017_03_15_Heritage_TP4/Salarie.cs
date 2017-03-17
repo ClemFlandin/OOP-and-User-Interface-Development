@@ -145,7 +145,10 @@ namespace _2017_03_15_Heritage_TP4
         }
         public static int NombreSalaries
         {
-            get { return Salarie.Compte; }
+            get
+            {
+                return Salarie.Compte;
+            }
         }
 
         /// <summary>

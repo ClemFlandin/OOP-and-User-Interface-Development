@@ -1,0 +1,7 @@
+c:\users\34011-36-06\documents\visual studio 2015\Projects\BookShopTest\BookShopTest\bin\Debug\BookShopTest.exe.config
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_17_OnlineBookShopTest\BookShopTest\bin\Debug\BookShopTest.exe.config
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_17_OnlineBookShopTest\BookShopTest\bin\Debug\BookShopTest.exe
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_17_OnlineBookShopTest\BookShopTest\bin\Debug\BookShopTest.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_17_OnlineBookShopTest\BookShopTest\obj\Debug\BookShopTest.csprojResolveAssemblyReference.cache
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_17_OnlineBookShopTest\BookShopTest\obj\Debug\BookShopTest.exe
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03_17_OnlineBookShopTest\BookShopTest\obj\Debug\BookShopTest.pdb
