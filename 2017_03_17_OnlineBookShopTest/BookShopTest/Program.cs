@@ -14,21 +14,24 @@ namespace BookShopTest
             Auteur a2 = new Auteur("Jones", "Gallois", 42);
             Auteur a3 = new Auteur("Wright", "Américain", 34);
             string strTitre = "Je ne suis pas un codeur";
-
+            int nbPages = 0;
             Oeuvre o1 = new Oeuvre(strTitre, a1.StrNomAuteur);
             Livre l1 = new Livre("La vie rêvée des codeurs", "Flandin", 12345, 555, 4);
             Livre l2 = new Livre("Do AFPA interns dream of C#?", "Jones", 12356, 444, 1);
             Livre l3 = new Livre("The time of our coding", "Wright", 987654, 666, 42);
             Livre l4 = new Livre(strTitre, a1.StrNomAuteur, 456789, 456, 20);
             List<Livre> livres = new List<Livre> { l1, l2, l3, l4 };
+
             foreach (var livre in livres)
             {
                 Console.WriteLine(livre.StrTitre);
             }
+
             string finCommande = "O";
+
             do
             {
-                Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre:");
+                Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre en choisissant parmi la liste ci-dessus:");
                 string titreLivre = Console.ReadLine();
                 foreach (var livre in livres)
                 {
@@ -37,6 +40,7 @@ namespace BookShopTest
                         try
                         {
                             livre.Commander(livre);
+                            nbPages += livre.NNombrePages;
                         }
                         catch (OeuvreIndisponibleException oie)
                         {
@@ -47,11 +51,11 @@ namespace BookShopTest
                         
                     }
                 }
-
                 Console.WriteLine("Voulez-vous commander un autre livre (O/N)?");
                 finCommande = Console.ReadLine();
             } while (finCommande != "N");
-            Console.WriteLine("Merci pour l'intérêt que vous nous portez.");
+
+            Console.WriteLine("Merci pour l'intérêt que vous nous portez. Revenez après avoir lu les {0} pages qui vous attendent ;)!", nbPages);
 
         }
     }

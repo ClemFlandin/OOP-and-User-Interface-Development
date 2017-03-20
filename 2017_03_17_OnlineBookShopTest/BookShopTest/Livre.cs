@@ -68,6 +68,11 @@ namespace BookShopTest
             this.NNombrePages = nNombrePages;
             this.NExemplairesDisponibles = nExemplairesDisponibles;
         }
+        /// <summary>
+        /// Méthode permettant de commander un livre
+        /// </summary>
+        /// <param name="livre"></param>
+        /// <returns></returns>
         public int Commander(Livre livre)
         {
             if (livre.NExemplairesDisponibles > 0)
