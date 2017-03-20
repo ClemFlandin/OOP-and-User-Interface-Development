@@ -16,6 +16,3 @@ U:\34011-36-06\Exercices\3. Développer une interface utilisateur\4. Exceptions\
 U:\34011-36-06\Exercices\3. Développer une interface utilisateur\4. Exceptions\2017_03_15_Heritage_TP7\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.exe
 U:\34011-36-06\Exercices\3. Développer une interface utilisateur\4. Exceptions\2017_03_15_Heritage_TP7\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.pdb
 U:\34011-36-06\Exercices\3. Développer une interface utilisateur\4. Exceptions\2017_03_15_Heritage_TP7\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.csprojResolveAssemblyReference.cache
-C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03.DevelopInterface\OOP-and-User-Interface-Development\2017_03_15_Heritage_TP4,5et7\2017_03_15_Heritage_TP4\bin\Debug\2017_03_15_Heritage_TP4.exe.config
-C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03.DevelopInterface\OOP-and-User-Interface-Development\2017_03_15_Heritage_TP4,5et7\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.exe
-C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03.DevelopInterface\OOP-and-User-Interface-Development\2017_03_15_Heritage_TP4,5et7\2017_03_15_Heritage_TP4\obj\Debug\2017_03_15_Heritage_TP4.pdb
