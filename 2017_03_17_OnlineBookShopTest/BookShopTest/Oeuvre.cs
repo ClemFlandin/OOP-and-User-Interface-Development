@@ -6,17 +6,38 @@ using System.Threading.Tasks;
 
 namespace BookShopTest
 {
-    public abstract class Oeuvre
+    public class Oeuvre
     {
         /// <summary>
-        /// Variables privées titre et 
+        /// Variables privées titre et nom auteur
         /// </summary>
-        abstract public string StrTitre();
-        abstract public string StrAuteur();
+        private string strTitre;
+        private string strAuteur;
         /// <summary>
         /// Accesseurs
         /// </summary>
-        
+        public string StrTitre
+        {
+            get
+            {
+                return this.strTitre;
+            }
+            set
+            {
+                this.strTitre = value;
+            }
+        }
+        public string StrAuteur
+        {
+            get
+            {
+                return this.strAuteur;
+            }
+            set
+            {
+                this.strAuteur = value;
+            }
+        }
         /// <summary>
         /// Constructeur pour nouvelle oeuvre à partir du titre
         /// </summary>

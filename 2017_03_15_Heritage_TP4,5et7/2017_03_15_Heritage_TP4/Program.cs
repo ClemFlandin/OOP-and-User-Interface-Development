@@ -25,12 +25,11 @@ namespace _2017_03_15_Heritage_TP4
 
             try
             {
-                Salarie s = new Salarie(45, 2, 2, "Bill", 24200);
-                Salarie s2 = new Salarie(45, 2, 2, "Bill", 24200);
+                Salarie s = new Salarie(45, 2, 8, "Bill", 54652);
+                Salarie s2 = new Salarie(45, 1, 2, "Bill", 24200);
                 Commercial c = new Commercial(8, 1, 7, "John", 563496, 5857, 20);
                 Commercial c2 = new Commercial(7, 1, 3, "John", 68768, 5857, 10);
                 Console.WriteLine(s.Equals(s2));
-                Commercial c3 = new Commercial();
             }
             catch (CategorieSalarieException cse)
             {

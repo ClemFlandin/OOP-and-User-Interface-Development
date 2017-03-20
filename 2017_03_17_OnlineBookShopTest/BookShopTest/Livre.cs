@@ -11,12 +11,10 @@ namespace BookShopTest
         /// <summary>
         /// Déclaration variables
         /// </summary>
-        private string strAuteur;
-        private string strTitre;
         private int nIsbn;
         private int nNombrePages;
         private int nExemplairesDisponibles;
-        private static int nLivresCommandes=0;
+        private static int nLivresCommandes = 0;
         /// <summary>
         /// Accesseurs
         /// </summary>
@@ -64,39 +62,36 @@ namespace BookShopTest
         /// <param name="nExemplairesDisponibles"></param>
         public Livre(string strTitre, string strAuteur, int nIsbn, int nNombrePages, int nExemplairesDisponibles)
         {
+            this.StrTitre = strTitre;
+            this.StrAuteur = strAuteur;
             this.NIsbn = nIsbn;
             this.NNombrePages = nNombrePages;
             this.NExemplairesDisponibles = nExemplairesDisponibles;
-            if (nExemplairesDisponibles<=0)
+        }
+        public int Commander(Livre livre)
+        {
+            if (livre.NExemplairesDisponibles > 0)
             {
-                OeuvreIndisponibleException oie = new OeuvreIndisponibleException(this);
+                nLivresCommandes++;
+                Console.WriteLine("Vous venez de rajouter au panier : {0} de {1}, merci!", livre.StrTitre, livre.StrAuteur);
+                livre.NExemplairesDisponibles--;
+                Console.WriteLine("Il reste {0} exemplaire(s) de ce livre", livre.NExemplairesDisponibles);
+                Console.WriteLine("Vous avez {0} livres dans le panier", nLivresCommandes);
+            }
+            else
+            {
+                OeuvreIndisponibleException oie = new OeuvreIndisponibleException(livre);
                 throw oie;
             }
-            Console.WriteLine("Vous venez de rajouter au panier : {0} de {1}, merci!", strTitre, strAuteur);
-            nLivresCommandes++;
-            Console.WriteLine("Vous avez {0} livres dans le panier", nLivresCommandes);
-            nExemplairesDisponibles--;
-            Console.WriteLine("Il reste {0} exemplaire(s) de ce livre", nExemplairesDisponibles);
+            return nLivresCommandes;
         }
-
         public static int GetNLivresCommandes()
         {
             return Livre.nLivresCommandes;
         }
         public static int NLivresCommandes
         {
-            get
-            {
-                return Livre.nLivresCommandes;
-            }
-        }
-        public override string StrAuteur()
-        {
-            return strAuteur;
-        }
-        public override string StrTitre()
-        {
-            return strTitre;
+            get { return Livre.NLivresCommandes; }
         }
     }
 }

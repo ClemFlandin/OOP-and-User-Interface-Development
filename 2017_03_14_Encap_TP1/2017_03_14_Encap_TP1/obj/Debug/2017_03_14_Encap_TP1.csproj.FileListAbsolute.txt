@@ -4,3 +4,6 @@ c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\
 c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.csprojResolveAssemblyReference.cache
 c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.exe
 c:\users\34011-36-06\documents\visual studio 2015\Projects\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03.DevelopInterface\OOP-and-User-Interface-Development\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\bin\Debug\2017_03_14_Encap_TP1.exe.config
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03.DevelopInterface\OOP-and-User-Interface-Development\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.exe
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_03.DevelopInterface\OOP-and-User-Interface-Development\2017_03_14_Encap_TP1\2017_03_14_Encap_TP1\obj\Debug\2017_03_14_Encap_TP1.pdb
