@@ -20,7 +20,9 @@ namespace BookShopTest
             Livre l2 = new Livre("Do AFPA interns dream of C#?", "Jones", 12356, 444, 1);
             Livre l3 = new Livre("The time of our coding", "Wright", 987654, 666, 42);
             Livre l4 = new Livre(strTitre, a1.StrNomAuteur, 456789, 456, 20);
-            List<Livre> livres = new List<Livre> { l1, l2, l3, l4 };
+            Livre l5 = new Livre("Coding people are ordinary people", "Wright", 65454, 741, 2);
+            Livre l6 = new Livre("C'est beau un codeur qui code", "Flandin", 54684, 365, 8);
+            List<Livre> livres = new List<Livre> { l1, l2, l3, l4, l5, l6 };
 
             foreach (var livre in livres)
             {
@@ -44,18 +46,16 @@ namespace BookShopTest
                         }
                         catch (OeuvreIndisponibleException oie)
                         {
-
                             Console.WriteLine(oie);
                             Console.WriteLine("Veuillez rentrer un autre titre de livre"); ;
                         }
-                        
                     }
                 }
                 Console.WriteLine("Voulez-vous commander un autre livre (O/N)?");
                 finCommande = Console.ReadLine();
             } while (finCommande != "N");
 
-            Console.WriteLine("Merci pour l'intérêt que vous nous portez. Revenez après avoir lu les {0} pages qui vous attendent ;)!", nbPages);
+            Console.WriteLine("Merci pour l'intérêt que vous nous portez. Revenez après avoir lu les {0} pages qui vous attendent ! ;)", nbPages);
 
         }
     }
