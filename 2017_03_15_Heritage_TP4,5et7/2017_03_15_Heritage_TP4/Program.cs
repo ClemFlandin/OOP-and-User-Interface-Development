@@ -67,6 +67,7 @@ namespace _2017_03_15_Heritage_TP4
                 {
                     Console.WriteLine("{0}, {1}", salarie.Key, salarie.Value.Nom);
                 }
+                
             }
             catch (CategorieSalarieException cse)
             {
