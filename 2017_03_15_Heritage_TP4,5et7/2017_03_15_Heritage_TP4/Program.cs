@@ -25,11 +25,48 @@ namespace _2017_03_15_Heritage_TP4
 
             try
             {
-                Salarie s = new Salarie(45, 2, 8, "Bill", 54652);
-                Salarie s2 = new Salarie(45, 1, 2, "Bill", 24200);
-                Commercial c = new Commercial(8, 1, 7, "John", 563496, 5857, 20);
+                Salarie s1 = new Salarie(1, 2, 8, "Bill", 54652);
+                Salarie s2 = new Salarie(2, 1, 2, "Bill", 24200);
+                Salarie s3 = new Salarie(3, 2, 7, "Simon", 36540);
+                Salarie s4 = new Salarie(4, 1, 2, "Georges", 54000);
+                Salarie s5 = new Salarie(5, 1, 2, "Jean", 36541);
+                Commercial c1 = new Commercial(6, 1, 7, "John", 563496, 5857, 20);
                 Commercial c2 = new Commercial(7, 1, 3, "John", 68768, 5857, 10);
-                Console.WriteLine(s.Equals(s2));
+                Commercial c3 = new Commercial(8, 1, 3, "Mathieu", 36551, 2134, 10);
+                Commercial c4 = new Commercial(9, 1, 3, "Stephen", 68000, 2400, 15);
+                Commercial c5 = new Commercial(10, 1, 3, "Rodolph", 68000, 2400, 15);
+                Console.WriteLine(s1.Equals(s2));
+                Salarie[] salariesTab = new Salarie[] { s1, s2, s3, s4, s5, c1, c2, c3, c4, c5};
+                foreach (Salarie salarie in salariesTab)
+                {
+                    Console.WriteLine("Salarié : {0}, matricule : {1}", salarie.Nom, salarie.Matricule);
+                }
+
+                List<Salarie> salariesList = new List<Salarie>() { s1, s2, s3, s4, s5, c1, c2, c3, c4, c5 };
+                foreach (Salarie salarie in salariesList)
+                {
+                    Console.WriteLine($"{salarie.Nom}, matricule : {salarie.Matricule}");
+                }
+
+                SortedDictionary<int, Salarie> salariesSD = new SortedDictionary<int, Salarie>()
+                    { { s1.Matricule, s1 }, { s2.Matricule, s2 }, { s3.Matricule, s3 }, { s4.Matricule, s4 }, { s5.Matricule, s5 }, { c1.Matricule, c1 },
+                        { c2.Matricule, c2 }, { c3.Matricule, c3 }, { c4.Matricule, c4 }, { c5.Matricule, c5 }};
+                foreach (KeyValuePair<int ,Salarie> salarie in salariesSD)
+                {
+                    Console.WriteLine("{0}, {1}", salarie.Key, salarie.Value.Nom);
+                }
+                salariesSD.Remove(3);
+                salariesSD.Remove(7);
+                foreach (KeyValuePair<int, Salarie> salarie in salariesSD)
+                {
+                    Console.WriteLine("{0}, {1}", salarie.Key, salarie.Value.Nom);
+                }
+
+                salariesSD.Clear();
+                foreach (KeyValuePair<int, Salarie> salarie in salariesSD)
+                {
+                    Console.WriteLine("{0}, {1}", salarie.Key, salarie.Value.Nom);
+                }
             }
             catch (CategorieSalarieException cse)
             {
