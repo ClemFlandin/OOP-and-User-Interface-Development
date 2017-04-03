@@ -9,12 +9,12 @@ namespace BookShopTest
     public class Livre : Oeuvre
     {
         /// <summary>
-        /// Déclaration variables
+        /// Déclaration variables privées
         /// </summary>
-        private int nIsbn;
-        private int nNombrePages;
-        private int nExemplairesDisponibles;
-        private static int nLivresCommandes = 0;
+        private int _nIsbn;
+        private int _nNombrePages;
+        private int _nExemplairesDisponibles;
+        private static int _nLivresCommandes = 0;
         /// <summary>
         /// Accesseurs
         /// </summary>
@@ -22,33 +22,33 @@ namespace BookShopTest
         {
             get
             {
-                return this.nIsbn;
+                return this._nIsbn;
             }
             set
             {
-                this.nIsbn = value;
+                this._nIsbn = value;
             }
         }
         public int NNombrePages
         {
             get
             {
-                return this.nNombrePages;
+                return this._nNombrePages;
             }
             set
             {
-                this.nNombrePages = value;
+                this._nNombrePages = value;
             }
         }
         public int NExemplairesDisponibles
         {
             get
             {
-                return this.nExemplairesDisponibles;
+                return this._nExemplairesDisponibles;
             }
             set
             {
-                this.nExemplairesDisponibles = value;
+                this._nExemplairesDisponibles = value;
             }
         }
 
@@ -77,22 +77,22 @@ namespace BookShopTest
         {
             if (livre.NExemplairesDisponibles > 0)
             {
-                nLivresCommandes++;
+                _nLivresCommandes++;
                 Console.WriteLine("Vous venez de rajouter au panier : {0} de {1}, merci!", livre.StrTitre, livre.StrAuteur);
                 livre.NExemplairesDisponibles--;
                 Console.WriteLine("Il reste {0} exemplaire(s) de ce livre", livre.NExemplairesDisponibles);
-                Console.WriteLine("Vous avez {0} livres dans le panier", nLivresCommandes);
+                Console.WriteLine("Vous avez {0} livres dans le panier", _nLivresCommandes);
             }
             else
             {
                 OeuvreIndisponibleException oie = new OeuvreIndisponibleException(livre);
                 throw oie;
             }
-            return nLivresCommandes;
+            return _nLivresCommandes;
         }
         public static int GetNLivresCommandes()
         {
-            return Livre.nLivresCommandes;
+            return Livre._nLivresCommandes;
         }
         public static int NLivresCommandes
         {

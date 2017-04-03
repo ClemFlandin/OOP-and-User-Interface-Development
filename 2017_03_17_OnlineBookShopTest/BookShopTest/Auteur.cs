@@ -11,9 +11,9 @@ namespace BookShopTest
         /// <summary>
         /// Déclaration variables privées
         /// </summary>
-        private string strNomAuteur;
-        private string strNationalite;
-        private int nAge;
+        private string _strNomAuteur;
+        private string _strNationalite;
+        private int _nAge;
 
         /// <summary>
         /// Accesseurs
@@ -22,33 +22,33 @@ namespace BookShopTest
         {
             get
             {
-                return this.strNomAuteur;
+                return this._strNomAuteur;
             }
             set
             {
-                this.strNomAuteur = value;
+                this._strNomAuteur = value;
             }
         }
-        private string StrNationalite
+        public string StrNationalite
         {
             get
             {
-                return this.strNationalite;
+                return this._strNationalite;
             }
             set
             {
-                this.strNationalite = value;
+                this._strNationalite = value;
             }
         }
         public int NAge
         {
             get
             {
-                return this.nAge;
+                return this._nAge;
             }
             set
             {
-                this.nAge = value;
+                this._nAge = value;
             }
         }
         /// <summary>
@@ -65,6 +65,11 @@ namespace BookShopTest
             this.NAge = nAge;
             Console.WriteLine("{0}, de nationalité : {1}, {2} ans", strNomAuteur, strNationalite, nAge);
         }
+        public Auteur()
+        {
+
+        }
+
         public virtual bool CompareTo(Object auteur)
         {
             return auteur is Auteur && StrNomAuteur == ((Auteur)auteur).StrNomAuteur && NAge == ((Auteur)auteur).NAge;
