@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace BookShopTest
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -26,8 +25,6 @@ namespace BookShopTest
             NouveauLivre("Coders are ordinary people", "Wright", 65454, 741, 2, livres);
             NouveauLivre("C'est beau un codeur qui code", "Flandin", 54684, 365, 8, livres);
 
-            
-            
             SortedDictionary<string, Livre> sdCatalogue = new SortedDictionary<string, Livre>();
             foreach (Livre livre in livres)
             {
