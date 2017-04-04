@@ -42,34 +42,63 @@ namespace BookShopTest
 
             //Appel de la méthode AfficherLivres pour afficher les livres présents dans la liste livres
             AfficherLivres(livres);
-
+            Console.WriteLine();
+            
             //Déclaration de deux variable : un char indiquant si la commande est finie (N) ou pas (O) 
             //et un int indiquant la somme des pages de tous les livres commandés
             char finCommande = 'O';
             int nbPages = 0;
+            string titreLivre=null;
             //Boucles do...while : tant que le client n'indique pas la fin de la commande, on rentre dans la boucle
             do
             {
                 //On affiche le catalogue DISPONIBLE puis on demande à l'utilisateur de rentrer le titre du livre qu'il souhaite commander
+                Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre en choisissant parmi la liste ci-dessous:");
                 AfficherCatalogue(sdCatalogue);
-                Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre en choisissant parmi la liste ci-dessus:");
-                string titreLivre = Console.ReadLine();
-                foreach (var livre in livres)
+                do
                 {
-                    if (String.Compare(titreLivre, livre.StrTitre) == 0)
+                    try
                     {
-                        try
+                        titreLivre = Console.ReadLine();
+                        int compte = 0;
+                        foreach (var livre in livres)
                         {
-                            livre.Commander(livre);
-                            nbPages += livre.NNombrePages;
+                            if (String.Compare(titreLivre, livre.StrTitre) == 0)
+                            {
+                                try
+                                {
+                                    livre.Commander(livre);
+                                    nbPages += livre.NNombrePages;
+                                }
+
+                                catch (OeuvreIndisponibleException oie)
+                                {
+                                    Console.WriteLine(oie);
+                                    Console.WriteLine("Veuillez rentrer un autre titre de livre");
+                                }
+
+                            }
+                            else
+                            {
+                                compte++;
+                            }
+                            
                         }
-                        catch (OeuvreIndisponibleException oie)
+                        if (compte==livres.Count)
                         {
-                            Console.WriteLine(oie);
-                            Console.WriteLine("Veuillez rentrer un autre titre de livre"); ;
+                            throw new SaisieIncorrecteException();
                         }
                     }
-                }
+                    catch (SaisieIncorrecteException sie)
+                    {
+                        Console.WriteLine(sie.ToString());
+
+                    }
+
+                } while (sdCatalogue.ContainsKey(titreLivre)== false);
+
+
+
                 Console.WriteLine("Voulez-vous commander un autre livre (O/N)?");
                 finCommande = Convert.ToChar(Console.ReadLine());
             } while (finCommande != 'N');

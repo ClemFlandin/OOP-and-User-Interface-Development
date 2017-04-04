@@ -98,5 +98,14 @@ namespace BookShopTest
         {
             get { return Livre.NLivresCommandes; }
         }
+        /// <summary>
+        /// Implémentation de la méthode CompareTo pour la classe livre
+        /// </summary>
+        /// <param name="livre"></param>
+        /// <returns></returns>
+        public virtual bool CompareTo(Livre livre)
+        {
+            return livre is Livre && StrTitre == ((Livre)livre).StrTitre;
+        }
     }
 }

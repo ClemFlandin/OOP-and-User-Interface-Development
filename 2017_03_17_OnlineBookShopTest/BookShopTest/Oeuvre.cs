@@ -53,5 +53,15 @@ namespace BookShopTest
         {
 
         }
+
+        /// <summary>
+        /// Implémentation de la méthode CompareTo de l'interface IComparables, pour la classe Oeuvre
+        /// </summary>
+        /// <param name="oeuvre"></param>
+        /// <returns></returns>
+        public virtual bool CompareTo(Oeuvre oeuvre)
+        {
+            return oeuvre is Oeuvre && StrTitre == ((Oeuvre)oeuvre).StrTitre && StrAuteur == ((Oeuvre)oeuvre).StrAuteur;
+        }
     }
 }
