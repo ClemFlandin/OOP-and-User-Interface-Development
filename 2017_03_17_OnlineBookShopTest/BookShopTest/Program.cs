@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace BookShopTest
 {
     class Program
@@ -19,20 +18,20 @@ namespace BookShopTest
             Console.WriteLine("================================================================================");
             NouvelAuteur("Flandin", "Français", 29, auteurs);
             NouvelAuteur("Jones", "Gallois", 42, auteurs);
-            NouvelAuteur("Wright", "Américain", 34, auteurs);
-            NouvelAuteur("Randrianjadakotoramanana", "Malgache", 33, auteurs);
+            NouvelAuteur("Smith", "Américain", 34, auteurs);
+            NouvelAuteur("Randriananjakotoramanana", "Malgache", 33, auteurs);
             Console.WriteLine("================================================================================");
+            
             //Instanciation de livres avec la méthode NouveauLivre
-            NouveauLivre("La vie rêvée des codeurs", "Flandin", 12345, 555, 4, livres);
-            NouveauLivre("Coders gotta code", "Jones", 12356, 444, 1, livres);
-            NouveauLivre("The time of our coding", "Wright", 9654, 666, 42, livres);
+            NouveauLivre("La vie rêvée des codeurs", "Flandin", 345, 555, 4, livres);
+            NouveauLivre("Coders gotta code", "Jones", 356, 444, 1, livres);
+            NouveauLivre("The time of our coding", "Smith", 9654, 666, 42, livres);
             NouveauLivre("Je ne suis pas un codeur", "Flandin", 6789, 456, 20, livres);
-            NouveauLivre("Coders are ordinary people", "Wright", 454, 741, 2, livres);
+            NouveauLivre("Coders are ordinary people", "Smith", 454, 741, 2, livres);
             NouveauLivre("C'est beau un codeur qui code", "Flandin", 684, 365, 8, livres);
 
             //Nouveau SortedDictionnary avec comme clé un string
             SortedDictionary<string, Livre> sdCatalogue = new SortedDictionary<string, Livre>();
-
 
             //Appel de la méthode AfficherLivres pour afficher les livres présents dans la liste livres
             AfficherLivres(livres);
@@ -162,7 +161,6 @@ namespace BookShopTest
                                     livre.Commander(livre);
                                     nbPages += livre.NNombrePages;
                                 }
-
                                 catch (OeuvreIndisponibleException oie)
                                 {
                                     Console.WriteLine();
@@ -170,7 +168,6 @@ namespace BookShopTest
                                     Console.WriteLine(oie);
                                     Console.WriteLine("Veuillez rentrer un autre titre de livre");
                                 }
-
                             }
                             else
                             {
