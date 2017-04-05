@@ -16,39 +16,131 @@ namespace BookShopTest
             List<Livre> livres = new List<Livre>();
 
             //Instanciation d'auteurs avec la méthode NouvelAuteur
+            Console.WriteLine("================================================================================");
             NouvelAuteur("Flandin", "Français", 29, auteurs);
             NouvelAuteur("Jones", "Gallois", 42, auteurs);
             NouvelAuteur("Wright", "Américain", 34, auteurs);
-            
+            NouvelAuteur("Randrianjadakotoramanana", "Malgache", 33, auteurs);
+            Console.WriteLine("================================================================================");
             //Instanciation de livres avec la méthode NouveauLivre
             NouveauLivre("La vie rêvée des codeurs", "Flandin", 12345, 555, 4, livres);
             NouveauLivre("Coders gotta code", "Jones", 12356, 444, 1, livres);
-            NouveauLivre("The time of our coding", "Wright", 987654, 666, 42, livres);
-            NouveauLivre("Je ne suis pas un codeur", "Flandin", 456789, 456, 20, livres);
-            NouveauLivre("Coders are ordinary people", "Wright", 65454, 741, 2, livres);
-            NouveauLivre("C'est beau un codeur qui code", "Flandin", 54684, 365, 8, livres);
+            NouveauLivre("The time of our coding", "Wright", 9654, 666, 42, livres);
+            NouveauLivre("Je ne suis pas un codeur", "Flandin", 6789, 456, 20, livres);
+            NouveauLivre("Coders are ordinary people", "Wright", 454, 741, 2, livres);
+            NouveauLivre("C'est beau un codeur qui code", "Flandin", 684, 365, 8, livres);
 
             //Nouveau SortedDictionnary avec comme clé un string
             SortedDictionary<string, Livre> sdCatalogue = new SortedDictionary<string, Livre>();
 
+
+            //Appel de la méthode AfficherLivres pour afficher les livres présents dans la liste livres
+            AfficherLivres(livres);
+            Console.WriteLine();
+
+            //isbn initialisé à 10000, qui sera incrémenté en cas de création de livre
+            int isbn = 10000;
+            char creation = 'N';
+            Console.WriteLine();
+            Console.WriteLine("================================================================================");
+            Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
+            creation = Convert.ToChar(Console.ReadLine());
+            while (creation == 'O')
+            {
+                Console.WriteLine();
+                Console.WriteLine("================================================================================");
+                Console.WriteLine("Que voulez-vous créer?('livre', 'auteur')");
+                string nouveau = Console.ReadLine();
+                switch (nouveau)
+                {
+                    case ("livre"):
+                        Console.WriteLine();
+                        Console.WriteLine("================================================================================");
+                        Console.WriteLine("Rentrez un titre non existant!");
+                        AfficherLivres(livres);
+                        string titre = Console.ReadLine();
+                        Console.WriteLine();
+                        Console.WriteLine("================================================================================");
+                        Console.WriteLine("Rentrez un auteur parmi la liste suivante : ");
+                        foreach (Auteur auteur in auteurs)
+                        {
+                            Console.WriteLine($"{auteur.StrNomAuteur}");
+                        }
+                        string nomAuteur = Console.ReadLine();
+                        int compte = 0;
+                        for (int i = 0; i < auteurs.Count; i++)
+                        {
+                            if (auteurs[i].StrNomAuteur != nomAuteur)
+                            {
+                                compte++;
+                            }
+                        }
+                        if (compte == auteurs.Count)
+                        {
+                            throw new AuteurInconnuException();
+                        }
+                        else
+                        {
+                            isbn++;
+                            Random rndPages = new Random();
+                            int pages = rndPages.Next(100, 1000);
+                            Random rndDispo = new Random();
+                            int dispo = rndDispo.Next(50);
+                            Livre nouvLivre = new Livre(titre, nomAuteur, isbn, pages, dispo);
+                            livres.Add(nouvLivre);
+                        }
+                        break;
+                    case ("auteur"):
+                        Console.WriteLine();
+                        Console.WriteLine("================================================================================");
+                        Console.WriteLine("Rentrez un nom d'auteur, une nationalité et un âge :");
+                        string[] strNvelAuteur = Console.ReadLine().Split();
+                        Auteur nvelAuteur = new Auteur(strNvelAuteur[0], strNvelAuteur[1], Convert.ToInt32(strNvelAuteur[2]));
+                        bool auteurExiste = false;
+                        for (int i = 0; i < auteurs.Count; i++)
+                        {
+                            if (nvelAuteur.CompareTo(auteurs[i])==true)
+                            {
+                                auteurExiste = true;
+                            }
+                        }
+                        if (auteurExiste==true)
+                        {
+                            Console.WriteLine("================================================================================");
+                            Console.WriteLine("Rentrez un nom d'auteur, une nationalité et un âge :");
+                            Console.WriteLine("L'auteur rentré existe déjà, annulation de la création de l'auteur.");
+                            nvelAuteur = null;
+                        }
+                        else
+                        {
+                            auteurs.Add(nvelAuteur);
+                        }
+                        break;
+                    default:
+                        Console.WriteLine();
+                        Console.WriteLine("================================================================================");
+                        Console.WriteLine("Veuillez saisir un terme correct");
+                        break;
+                }
+                Console.WriteLine();
+                Console.WriteLine("================================================================================");
+                Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
+                creation = Convert.ToChar(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("================================================================================");
             //Remplissage du sdCatalogue à partir de la liste Livres, la clé étant le titre de chaque livre
             foreach (Livre livre in livres)
             {
                 sdCatalogue.Add(livre.StrTitre, livre);
             }
-            
-            //Un nouvel auteur
-            NouvelAuteur("Randrianjadakotoramanana", "Malgache", 33, auteurs);
 
-            //Appel de la méthode AfficherLivres pour afficher les livres présents dans la liste livres
-            AfficherLivres(livres);
-            Console.WriteLine();
-            
             //Déclaration de deux variable : un char indiquant si la commande est finie (N) ou pas (O) 
             //et un int indiquant la somme des pages de tous les livres commandés
             char finCommande = 'O';
             int nbPages = 0;
             string titreLivre=null;
+            
             //Boucles do...while : tant que le client n'indique pas la fin de la commande, on rentre dans la boucle
             do
             {
@@ -73,6 +165,8 @@ namespace BookShopTest
 
                                 catch (OeuvreIndisponibleException oie)
                                 {
+                                    Console.WriteLine();
+                                    Console.WriteLine("================================================================================");
                                     Console.WriteLine(oie);
                                     Console.WriteLine("Veuillez rentrer un autre titre de livre");
                                 }
@@ -82,7 +176,6 @@ namespace BookShopTest
                             {
                                 compte++;
                             }
-                            
                         }
                         if (compte==livres.Count)
                         {
@@ -91,20 +184,19 @@ namespace BookShopTest
                     }
                     catch (SaisieIncorrecteException sie)
                     {
-                        Console.WriteLine(sie.ToString());
-
+                        Console.WriteLine();
+                        Console.WriteLine("=================================================================================");
+                        Console.WriteLine(sie);
                     }
-
                 } while (sdCatalogue.ContainsKey(titreLivre)== false);
-
-
-
+                Console.WriteLine();
+                Console.WriteLine("================================================================================");
                 Console.WriteLine("Voulez-vous commander un autre livre (O/N)?");
                 finCommande = Convert.ToChar(Console.ReadLine());
             } while (finCommande != 'N');
-
+            Console.WriteLine();
+            Console.WriteLine("================================================================================");
             Console.WriteLine("Merci pour l'intérêt que vous nous portez. Revenez après avoir lu les {0} pages qui vous attendent ! ;)", nbPages);
-
         }
 
         /// <summary>

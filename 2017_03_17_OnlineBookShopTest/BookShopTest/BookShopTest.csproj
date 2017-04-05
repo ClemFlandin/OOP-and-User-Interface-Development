@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auteur.cs" />
+    <Compile Include="AuteurInconnuException.cs" />
     <Compile Include="IComparables.cs" />
     <Compile Include="Livre.cs" />
     <Compile Include="Oeuvre.cs" />
