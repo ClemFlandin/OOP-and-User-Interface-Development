@@ -40,6 +40,7 @@ namespace BookShopTest
             //isbn initialisé à 10000, qui sera incrémenté en cas de création de livre
             int isbn = 10000;
             char creation = 'N';
+            string strCreation = "incorrect";
             Console.WriteLine();
             Console.WriteLine("================================================================================");
             Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
@@ -48,20 +49,18 @@ namespace BookShopTest
                 
                 try
                 {
-                    string strCreation = Console.ReadLine();
-                    if (strCreation.Length != 1)
+                    while (strCreation.Length != 1)
                     {
+                        strCreation = Console.ReadLine();
                         throw new SaisieIncorrecteException();
                     }
-                    else
-                    {
-                        creation = Convert.ToChar(Console.ReadLine());
-                    }
+                    creation = Convert.ToChar(strCreation);
                 }
                 catch (SaisieIncorrecteException sie)
                 {
                     Console.WriteLine(sie);
                 }
+                
             } while (creation != 'O' && creation != 'N');
 
 
