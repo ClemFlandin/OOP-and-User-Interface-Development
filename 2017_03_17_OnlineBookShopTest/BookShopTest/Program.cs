@@ -34,7 +34,7 @@ namespace BookShopTest
             SortedDictionary<string, Livre> sdCatalogue = new SortedDictionary<string, Livre>();
 
             //Appel de la méthode AfficherLivres pour afficher les livres présents dans la liste livres
-            AfficherLivres(livres);
+            Affichage.AfficherLivres(livres);
             Console.WriteLine();
 
             //isbn initialisé à 10000, qui sera incrémenté en cas de création de livre
@@ -43,7 +43,28 @@ namespace BookShopTest
             Console.WriteLine();
             Console.WriteLine("================================================================================");
             Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
-            creation = Convert.ToChar(Console.ReadLine());
+            do
+            {
+                
+                try
+                {
+                    string strCreation = Console.ReadLine();
+                    if (strCreation.Length != 1)
+                    {
+                        throw new SaisieIncorrecteException();
+                    }
+                    else
+                    {
+                        creation = Convert.ToChar(Console.ReadLine());
+                    }
+                }
+                catch (SaisieIncorrecteException sie)
+                {
+                    Console.WriteLine(sie);
+                }
+            } while (creation != 'O' && creation != 'N');
+
+
             while (creation == 'O')
             {
                 Console.WriteLine();
@@ -56,30 +77,28 @@ namespace BookShopTest
                         Console.WriteLine();
                         Console.WriteLine("================================================================================");
                         Console.WriteLine("Rentrez un titre non existant!");
-                        AfficherLivres(livres);
+                        Affichage.AfficherLivres(livres);
                         string titre = Console.ReadLine();
                         Console.WriteLine();
                         Console.WriteLine("================================================================================");
                         Console.WriteLine("Rentrez un auteur parmi la liste suivante : ");
-                        foreach (Auteur auteur in auteurs)
-                        {
-                            Console.WriteLine($"{auteur.StrNomAuteur}");
-                        }
+                        Console.WriteLine();
+                        Affichage.AfficherNomAuteurs(auteurs);
                         string nomAuteur = Console.ReadLine();
-                        int compte = 0;
-                        for (int i = 0; i < auteurs.Count; i++)
+                        try
                         {
-                            if (auteurs[i].StrNomAuteur != nomAuteur)
+                            int compte = 0;
+                            for (int i = 0; i < auteurs.Count; i++)
                             {
-                                compte++;
+                                if (auteurs[i].StrNomAuteur != nomAuteur)
+                                {
+                                    compte++;
+                                }
                             }
-                        }
-                        if (compte == auteurs.Count)
-                        {
-                            throw new AuteurInconnuException();
-                        }
-                        else
-                        {
+                            if (compte == auteurs.Count)
+                            {
+                                throw new AuteurInconnuException();
+                            }
                             isbn++;
                             Random rndPages = new Random();
                             int pages = rndPages.Next(100, 1000);
@@ -88,31 +107,41 @@ namespace BookShopTest
                             Livre nouvLivre = new Livre(titre, nomAuteur, isbn, pages, dispo);
                             livres.Add(nouvLivre);
                         }
+                        catch (AuteurInconnuException aie)
+                        {
+                            Console.WriteLine(aie); ;
+                        }
                         break;
                     case ("auteur"):
                         Console.WriteLine();
                         Console.WriteLine("================================================================================");
                         Console.WriteLine("Rentrez un nom d'auteur, une nationalité et un âge :");
-                        string[] strNvelAuteur = Console.ReadLine().Split();
-                        Auteur nvelAuteur = new Auteur(strNvelAuteur[0], strNvelAuteur[1], Convert.ToInt32(strNvelAuteur[2]));
-                        bool auteurExiste = false;
-                        for (int i = 0; i < auteurs.Count; i++)
+                        try
                         {
-                            if (nvelAuteur.CompareTo(auteurs[i])==true)
+                            string[] strNvelAuteur = Console.ReadLine().Split();
+                            Auteur nvelAuteur = new Auteur(strNvelAuteur[0], strNvelAuteur[1], Convert.ToInt32(strNvelAuteur[2]));
+                            bool auteurExiste = false;
+                            for (int i = 0; i < auteurs.Count; i++)
                             {
-                                auteurExiste = true;
+                                if (nvelAuteur.CompareTo(auteurs[i]) == true)
+                                {
+                                    auteurExiste = true;
+                                }
+                            }
+                            if (auteurExiste == true)
+                            {
+                                Console.WriteLine("================================================================================");
+                                Console.WriteLine("L'auteur rentré existe déjà, annulation de la création de l'auteur.");
+                                nvelAuteur = null;
+                            }
+                            else
+                            {
+                                auteurs.Add(nvelAuteur);
                             }
                         }
-                        if (auteurExiste==true)
+                        catch (SaisieIncorrecteException sie)
                         {
-                            Console.WriteLine("================================================================================");
-                            Console.WriteLine("Rentrez un nom d'auteur, une nationalité et un âge :");
-                            Console.WriteLine("L'auteur rentré existe déjà, annulation de la création de l'auteur.");
-                            nvelAuteur = null;
-                        }
-                        else
-                        {
-                            auteurs.Add(nvelAuteur);
+                            Console.WriteLine(sie);
                         }
                         break;
                     default:
@@ -126,6 +155,7 @@ namespace BookShopTest
                 Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
                 creation = Convert.ToChar(Console.ReadLine());
             }
+            
             Console.WriteLine();
             Console.WriteLine("================================================================================");
             //Remplissage du sdCatalogue à partir de la liste Livres, la clé étant le titre de chaque livre
@@ -145,7 +175,7 @@ namespace BookShopTest
             {
                 //On affiche le catalogue DISPONIBLE puis on demande à l'utilisateur de rentrer le titre du livre qu'il souhaite commander
                 Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre en choisissant parmi la liste ci-dessous : ");
-                AfficherCatalogue(sdCatalogue);
+                Affichage.AfficherCatalogue(sdCatalogue);
                 do
                 {
                     try
@@ -182,7 +212,7 @@ namespace BookShopTest
                     catch (SaisieIncorrecteException sie)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("=================================================================================");
+                        Console.WriteLine("================================================================================");
                         Console.WriteLine(sie);
                     }
                 } while (sdCatalogue.ContainsKey(titreLivre)== false);
@@ -194,49 +224,6 @@ namespace BookShopTest
             Console.WriteLine();
             Console.WriteLine("================================================================================");
             Console.WriteLine("Merci pour l'intérêt que vous nous portez. Revenez après avoir lu les {0} pages qui vous attendent ! ;)", nbPages);
-        }
-
-
-        /// <summary>
-        /// Méthode permettant l'affichage des auteurs, par nom de famille
-        /// </summary>
-        /// <param name="auteurs"></param>
-        static void AfficherAuteurs(List<Auteur> auteurs)
-        {
-            foreach (Auteur auteur in auteurs)
-            {
-                Console.WriteLine(auteur.StrNomAuteur);
-                Console.WriteLine();
-            }
-        }
-
-        /// <summary>
-        /// Méthode permettant l'affichage des livres, par titre
-        /// </summary>
-        /// <param name="livres"></param>
-        static void AfficherLivres(List<Livre> livres)
-        {
-            foreach (Livre livre in livres)
-            {
-                Console.WriteLine(livre.StrTitre);
-                Console.WriteLine();
-            }
-        }
-
-        /// <summary>
-        /// Méthode permettant l'affichage du catalogue, par titre de livre DISPONIBLE
-        /// </summary>
-        /// <param name="sdCatalogue"></param>
-        static void AfficherCatalogue(SortedDictionary<string, Livre> sdCatalogue)
-        {
-            foreach (KeyValuePair<string, Livre> livre in sdCatalogue)
-            {
-                if (livre.Value.NExemplairesDisponibles>0)
-                {
-                    Console.WriteLine(livre.Value.StrTitre);
-                    Console.WriteLine();
-                }
-            }
         }
     }
 }

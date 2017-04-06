@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Affichage.cs" />
     <Compile Include="Auteur.cs" />
     <Compile Include="AuteurInconnuException.cs" />
     <Compile Include="IComparables.cs" />
