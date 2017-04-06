@@ -23,14 +23,14 @@ namespace BookShopTest
             Console.WriteLine("================================================================================");
             
             //Instanciation de livres avec la méthode NouveauLivre
-            NouveauLivre("La vie rêvée des codeurs", "Flandin", 345, 555, 4, livres);
+            NouveauLivre("La vie rêvée des codeurs", "Randriananjakotoramanana", 345, 555, 4, livres);
             NouveauLivre("Coders gotta code", "Jones", 356, 444, 1, livres);
             NouveauLivre("The time of our coding", "Smith", 9654, 666, 42, livres);
             NouveauLivre("Je ne suis pas un codeur", "Flandin", 6789, 456, 20, livres);
             NouveauLivre("Coders are ordinary people", "Smith", 454, 741, 2, livres);
             NouveauLivre("C'est beau un codeur qui code", "Flandin", 684, 365, 8, livres);
 
-            //Nouveau SortedDictionnary avec comme clé un string
+            //Nouveau SortedDictionnary avec comme clé un string (le titre du livre) et comme value un livre
             SortedDictionary<string, Livre> sdCatalogue = new SortedDictionary<string, Livre>();
 
             //Appel de la méthode AfficherLivres pour afficher les livres présents dans la liste livres
@@ -144,7 +144,7 @@ namespace BookShopTest
             do
             {
                 //On affiche le catalogue DISPONIBLE puis on demande à l'utilisateur de rentrer le titre du livre qu'il souhaite commander
-                Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre en choisissant parmi la liste ci-dessous:");
+                Console.WriteLine("Quel livre voulez-vous commander? Veuillez rentrer son titre en choisissant parmi la liste ci-dessous : ");
                 AfficherCatalogue(sdCatalogue);
                 do
                 {

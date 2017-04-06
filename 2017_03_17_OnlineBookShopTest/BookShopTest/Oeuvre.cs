@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookShopTest
 {
-    public class Oeuvre
+    public abstract class Oeuvre
     {
         /// <summary>
         /// Variables privées titre et nom auteur
@@ -48,7 +48,9 @@ namespace BookShopTest
             Console.Write("Nouvelle oeuvre créée par {0} : ", strAuteur);
             Console.WriteLine(strTitre);
         }
-
+        /// <summary>
+        /// Constructeur vide
+        /// </summary>
         public Oeuvre()
         {
 

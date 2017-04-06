@@ -1,0 +1,10 @@
+C:\Users\34011-36-06\Documents\Visual Studio 2015\TPs\Bank\Bank\bin\Debug\Bank.dll
+C:\Users\34011-36-06\Documents\Visual Studio 2015\TPs\Bank\Bank\bin\Debug\Bank.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\TPs\Bank\Bank\obj\Debug\Bank.csprojResolveAssemblyReference.cache
+C:\Users\34011-36-06\Documents\Visual Studio 2015\TPs\Bank\Bank\obj\Debug\Bank.dll
+C:\Users\34011-36-06\Documents\Visual Studio 2015\TPs\Bank\Bank\obj\Debug\Bank.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_04_06_TestTestsUnitBank\Bank\bin\Debug\Bank.dll
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_04_06_TestTestsUnitBank\Bank\bin\Debug\Bank.pdb
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_04_06_TestTestsUnitBank\Bank\obj\Debug\Bank.csprojResolveAssemblyReference.cache
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_04_06_TestTestsUnitBank\Bank\obj\Debug\Bank.dll
+C:\Users\34011-36-06\Documents\Visual Studio 2015\Projects\2017_04_06_TestTestsUnitBank\Bank\obj\Debug\Bank.pdb

@@ -52,7 +52,7 @@ namespace BookShopTest
             }
         }
         /// <summary>
-        /// Constructeur
+        /// Constructeur avec 3 paramètres
         /// </summary>
         /// <param name="strNomAuteur"></param>
         /// <param name="strNationalite"></param>
@@ -65,6 +65,9 @@ namespace BookShopTest
             this.NAge = nAge;
             Console.WriteLine("{0}, de nationalité : {1}, {2} ans", strNomAuteur, strNationalite, nAge);
         }
+        /// <summary>
+        /// Constructeur vide 
+        /// </summary>
         public Auteur()
         {
 

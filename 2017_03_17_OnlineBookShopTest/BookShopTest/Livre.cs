@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BookShopTest
 {
+    /// <summary>
+    /// Classe publique, fille de Oeuv
+    /// </summary>
     public class Livre : Oeuvre
     {
         /// <summary>
@@ -53,7 +56,7 @@ namespace BookShopTest
         }
 
         /// <summary>
-        /// Constructeur
+        /// Constructeur de Livre en fonction de 5 paramètres
         /// </summary>
         /// <param name="strTitre"></param>
         /// <param name="strAuteur"></param>
@@ -72,7 +75,7 @@ namespace BookShopTest
         /// Méthode permettant de commander un livre
         /// </summary>
         /// <param name="livre"></param>
-        /// <returns></returns>
+        /// <returns>Nombre de livres actuellement au panier</returns>
         public int Commander(Livre livre)
         {
             if (livre.NExemplairesDisponibles > 0)
@@ -90,6 +93,10 @@ namespace BookShopTest
             }
             return _nLivresCommandes;
         }
+        /// <summary>
+        /// Implémentation de l'accès à l'attribut statique de classe _nLivresCommandes
+        /// </summary>
+        /// <returns></returns>
         public static int GetNLivresCommandes()
         {
             return Livre._nLivresCommandes;
