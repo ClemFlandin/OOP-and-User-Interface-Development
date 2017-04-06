@@ -46,21 +46,20 @@ namespace BookShopTest
             Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
             do
             {
-                
-                try
+                while (strCreation.Length != 1)
                 {
-                    while (strCreation.Length != 1)
+                    try
                     {
                         strCreation = Console.ReadLine();
                         throw new SaisieIncorrecteException();
                     }
-                    creation = Convert.ToChar(strCreation);
+                    catch (SaisieIncorrecteException sie)
+                    {
+                        Console.WriteLine(sie);
+                    }
                 }
-                catch (SaisieIncorrecteException sie)
-                {
-                    Console.WriteLine(sie);
-                }
-                
+                creation = Convert.ToChar(strCreation);
+
             } while (creation != 'O' && creation != 'N');
 
 
