@@ -16,7 +16,6 @@ namespace BookShopTest
         /// </summary>
         public SaisieIncorrecteException()
         {
-            
         }
         /// <summary>
         /// Override de tostring
@@ -26,7 +25,5 @@ namespace BookShopTest
         {
             return "Votre saisie est incorrecte, veuillez effectuer une saisie correcte.";
         }
-
     }
 }
-

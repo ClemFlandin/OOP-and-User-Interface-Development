@@ -11,24 +11,24 @@ namespace BookShopTest
         static void Main(string[] args)
         {
             //Déclaration de deux listes : une d'auteurs, une de livres
-            List<Auteur> auteurs = new List<Auteur>();
-            List<Livre> livres = new List<Livre>();
 
             //Instanciation d'auteurs avec la méthode NouvelAuteur
             Console.WriteLine("================================================================================");
-            NouvelAuteur("Flandin", "Français", 29, auteurs);
-            NouvelAuteur("Jones", "Gallois", 42, auteurs);
-            NouvelAuteur("Smith", "Américain", 34, auteurs);
-            NouvelAuteur("Randriananjakotoramanana", "Malgache", 33, auteurs);
+            Auteur flandin = new Auteur("Flandin", "Français", 29);
+            Auteur jones = new Auteur("Jones", "Gallois", 42);
+            Auteur smith = new Auteur("Smith", "Américain", 34);
+            Auteur ra = new Auteur("Randriananjakotoramanana", "Malgache", 33);
+            List<Auteur> auteurs = new List<Auteur> { flandin, jones, smith, ra };
             Console.WriteLine("================================================================================");
             
             //Instanciation de livres avec la méthode NouveauLivre
-            NouveauLivre("La vie rêvée des codeurs", "Randriananjakotoramanana", 345, 555, 4, livres);
-            NouveauLivre("Coders gotta code", "Jones", 356, 444, 1, livres);
-            NouveauLivre("The time of our coding", "Smith", 9654, 666, 42, livres);
-            NouveauLivre("Je ne suis pas un codeur", "Flandin", 6789, 456, 20, livres);
-            NouveauLivre("Coders are ordinary people", "Smith", 454, 741, 2, livres);
-            NouveauLivre("C'est beau un codeur qui code", "Flandin", 684, 365, 8, livres);
+            Livre livre1 = new Livre("La vie rêvée des codeurs", "Randriananjakotoramanana", 345, 555, 4);
+            Livre livre2 = new Livre("Coders gotta code", "Jones", 356, 444, 1);
+            Livre livre3 = new Livre("The time of our coding", "Smith", 9654, 666, 42);
+            Livre livre4 = new Livre("Je ne suis pas un codeur", "Flandin", 6789, 456, 20);
+            Livre livre5 = new Livre("Coders are ordinary people", "Smith", 454, 741, 2);
+            Livre livre6 = new Livre("C'est beau un codeur qui code", "Flandin", 684, 365, 8);
+            List<Livre> livres = new List<Livre> { livre1, livre2, livre3, livre4, livre5, livre6 };
 
             //Nouveau SortedDictionnary avec comme clé un string (le titre du livre) et comme value un livre
             SortedDictionary<string, Livre> sdCatalogue = new SortedDictionary<string, Livre>();
@@ -196,39 +196,6 @@ namespace BookShopTest
             Console.WriteLine("Merci pour l'intérêt que vous nous portez. Revenez après avoir lu les {0} pages qui vous attendent ! ;)", nbPages);
         }
 
-        /// <summary>
-        /// Méthode statique permettant la création d'un nouvel auteur, s'il n'existe pas déjà
-        /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="nationalite"></param>
-        /// <param name="age"></param>
-        /// <param name="auteurs"></param>
-        static void NouvelAuteur(string nom, string nationalite, int age, List<Auteur> auteurs)
-        {
-            Auteur auteur = new Auteur(nom, nationalite, age);
-            if (auteurs.Contains(auteur)==false)
-            {
-                auteurs.Add(auteur);
-            }
-        }
-
-        /// <summary>
-        /// Méthode statique permettant la création d'un nouveau livre, s'il n'existe pas déjà
-        /// </summary>
-        /// <param name="titre"></param>
-        /// <param name="auteur"></param>
-        /// <param name="isbn"></param>
-        /// <param name="nbrePages"></param>
-        /// <param name="nExemplairesDisponibles"></param>
-        /// <param name="livres"></param>
-        static void NouveauLivre(string titre, string auteur, int isbn, int nbrePages, int nExemplairesDisponibles, List<Livre> livres)
-        {
-            Livre livre = new Livre(titre, auteur, isbn, nbrePages, nExemplairesDisponibles);
-            if (livres.Contains(livre)== false)
-            {
-                livres.Add(livre);
-            }
-        }
 
         /// <summary>
         /// Méthode permettant l'affichage des auteurs, par nom de famille
