@@ -9,7 +9,7 @@ namespace BookShopTest
     /// <summary>
     /// Classe implémentant une exception interceptant le fait que la saisie est incorrecte
     /// </summary>
-    public class SaisieIncorrecteException : ArgumentException
+    public class SaisieIncorrecteException : FormatException
     {
         /// <summary>
         /// Constructeur

@@ -46,19 +46,22 @@ namespace BookShopTest
             Console.WriteLine("Voulez-vous créer un nouveau livre, un nouvel auteur? (O/N)");
             do
             {
-                while (strCreation.Length != 1)
+                do
                 {
+                    strCreation = Console.ReadLine();
                     try
                     {
-                        strCreation = Console.ReadLine();
-                        throw new SaisieIncorrecteException();
+                        
+                        creation = Convert.ToChar(strCreation);
+                        
                     }
-                    catch (SaisieIncorrecteException sie)
+                    catch (FormatException fe)
                     {
-                        Console.WriteLine(sie);
+                        Console.WriteLine();
+                        Console.WriteLine("================================================================================");
+                        Console.WriteLine(fe.Message);
                     }
-                }
-                creation = Convert.ToChar(strCreation);
+                } while (strCreation.Length != 1) ;
 
             } while (creation != 'O' && creation != 'N');
 
@@ -74,8 +77,8 @@ namespace BookShopTest
                     case ("livre"):
                         Console.WriteLine();
                         Console.WriteLine("================================================================================");
-                        Console.WriteLine("Rentrez un titre non existant!");
                         Affichage.AfficherLivres(livres);
+                        Console.WriteLine("Rentrez un titre non présent dans la liste ci-dessus!");
                         string titre = Console.ReadLine();
                         Console.WriteLine();
                         Console.WriteLine("================================================================================");
@@ -107,7 +110,7 @@ namespace BookShopTest
                         }
                         catch (AuteurInconnuException aie)
                         {
-                            Console.WriteLine(aie); ;
+                            Console.WriteLine(aie);
                         }
                         break;
                     case ("auteur"):
